@@ -15,12 +15,17 @@
 
 #trash,
 #plus,
-#notesIcon {
+#notesIcon,
+#searchIcon {
   padding-left: 5px;
   font-size: 18px;
   position: relative;
   align-items: center;
   justify-content: center;
+}
+
+#searchIcon {
+  padding-left: 0px;
 }
 
 #notesIcon {
