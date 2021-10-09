@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(0, 0, 1);
+}
+#heading{
+    color: white;
+    font-weight: 1200;
+}
+.notes{
+    box-sizing: content-box;
+    border: 5px solid white;
+    border-radius: 40px;
+}
+.notes:hover{
+    transform: rotate(0) scale(1.05) translateZ(0);
+}
