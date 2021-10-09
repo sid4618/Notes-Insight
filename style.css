@@ -1,29 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-#heading{
-    color: black;
-    font-weight: 1200;
+* {
+  font-family: "Lobster", cursive;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
-.notes{
-    background-color:rgb(162, 210, 255);
-    border: 5px solid white;
-      border-radius: 2%;
 
+#heading {
+  color: black;
+  font-weight: 1200;
+  font-size: 50px;
 }
-.notes:hover{
-    box-shadow: 0 0 40px white;
-    transform: rotate(0) scale(1.05) translateZ(0);
-}
-.container{
-    color: black;
-}
-.container-fluid{
-    color: rgb(0, 0, 1);
-}
-#addBtn:hover{
 
-    transform: rotate(0) scale(1.5) translateZ(0);
-    background-color: royalblue;
+#trash,
+#plus {
+  padding-left: 5px;
+  font-size: 18px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
-.navbar{
-    background-color: rgb(255, 134, 94);
+body {
+  background-image: url("https://unsplash.com/photos/HbcfaO4m03s/download?force=true&w=1920");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.notes {
+  background-image: url("https://unsplash.com/photos/gM8igOIP5MA/download?force=true&w=1920");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2%;
+}
+.notes:hover {
+  box-shadow: 0 0 60px black;
+  transform: rotate(0) scale(1.05) translateZ(0);
+}
+
+#title {
+  margin-bottom: 20px;
+}
+.container {
+  color: black;
+}
+.container-fluid {
+  color: rgb(0, 0, 1);
+}
+
+#title:hover,
+#addTxt:hover {
+  transform: rotate(0) scale(1.05) translateZ(0);
+}
+
+#addBtn:hover {
+  transform: rotate(0) scale(1.2) translateZ(0);
+  color: white;
+  background-color: royalblue;
+}
+
+#clearBtn:hover {
+  transform: rotate(0) scale(1.2) translateZ(0);
+  background-color: red;
+}
+
+#clearNotes:hover {
+  transform: rotate(0) scale(1.2) translateZ(0);
+  background-color: green;
+}
+
+.navbar {
+  background-image: url("https://unsplash.com/photos/h0Vxgz5tyXA/download?force=true&w=2400");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 800px) {
+  #heading {
+    font-size: 35px;
+  }
+  body {
+    background-repeat: no-repeat;
+    background-size: calc(450vh);
+  }
 }
