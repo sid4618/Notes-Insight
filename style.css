@@ -1,15 +1,29 @@
-body{
-    background-color: rgb(0, 0, 1);
-}
+
 #heading{
-    color: white;
+    color: black;
     font-weight: 1200;
 }
 .notes{
-    box-sizing: content-box;
+    background-color:rgb(162, 210, 255);
     border: 5px solid white;
-    border-radius: 40px;
+      border-radius: 2%;
+
 }
 .notes:hover{
+    box-shadow: 0 0 40px white;
     transform: rotate(0) scale(1.05) translateZ(0);
+}
+.container{
+    color: black;
+}
+.container-fluid{
+    color: rgb(0, 0, 1);
+}
+#addBtn:hover{
+
+    transform: rotate(0) scale(1.5) translateZ(0);
+    background-color: royalblue;
+}
+.navbar{
+    background-color: rgb(255, 134, 94);
 }
