@@ -21,9 +21,7 @@ function clear() {
   showNotes();
 }
 let clearBtn = document.getElementById("clearNotes");
-clearBtn.addEventListener("click",clear);
-
-
+clearBtn.addEventListener("click", clear);
 
 // if user add a note and title,add it to local storage
 function add(e) {
@@ -63,7 +61,7 @@ function add(e) {
 }
 let addBtn = document.getElementById("addBtn");
 6;
-addBtn.addEventListener("click",add);
+addBtn.addEventListener("click", add);
 
 // // function to show titles from localStorage
 // function showTitles() {
@@ -128,10 +126,8 @@ function deleteNote(ind) {
 
 // searching operation
 
-
-
 let search = document.getElementById("searchTxt");
-search.addEventListener("input", function (){
+search.addEventListener("input", function () {
   let inputVal = search.value.toLowerCase();
   // console.log('Input event fired!', inputVal);
   let noteCards = document.getElementsByClassName("noteCard");
@@ -152,39 +148,38 @@ search.addEventListener("input", function (){
   });
 });
 
-
 // speech to text
 
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
-    'hello': function() {
+    " hello ": function () {
       console.log("Hello");
+      i = 1;
     },
-    'add title *tag':function(variable) {
+    "add title *tag": function (variable) {
       console.log(variable);
-      let title=document.getElementById("title");
-      title.value=variable;
-    
+      let title = document.getElementById("title");
+      title.value = variable;
+      i = 2;
     },
-    'add note *tag':function(variable){
+    "add note *tag": function (variable) {
       console.log(variable);
-      let note=document.getElementById("addTxt");
-      note.value=variable;
+      let note = document.getElementById("addTxt");
+      note.value = variable;
+      i = 3;
     },
-    'add':function(){
+    " add ": function () {
       console.log("add ho gaya");
       add();
     },
-    'clear': function() {
-       clear();
+    " clear ": function () {
+      clear();
     },
-    'delete *tag': function(variable) {
+    "delete *tag": function (variable) {
       console.log("delete ho gaya");
       deleteNote(variable);
-    }
-    
-    
+    },
   };
 
   // Add our commands to annyang
@@ -193,3 +188,37 @@ if (annyang) {
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
 }
+
+// text to speech
+let i = 1;
+let mainContainer = document.getElementById("main-container");
+mainContainer.addEventListener("click", () => {
+  let speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = "Welcome to Notes Insight";
+  speech.volume = 1;
+  speech.rate = 1;
+  speech.pitch = 1;
+
+  if (i == 1) {
+    window.speechSynthesis.speak(speech);
+
+    i = 0;
+  }
+  if (i == 2) {
+    speech.text = "Title Added";
+    window.speechSynthesis.speak(speech);
+    i = 0;
+  }
+  if (i == 3) {
+    speech.text = "Note Added";
+    window.speechSynthesis.speak(speech);
+    i = 0;
+  }
+  console.log(i);
+});
+
+// window.onload = function () {
+//   document.getElementById("tah_audio").play();
+//   console.log("done");
+// };

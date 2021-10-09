@@ -11,7 +11,7 @@
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/light-icons@1.0.10/dist/light-icon.css">
-  
+
 </head>
 
 <body>
@@ -32,12 +32,14 @@
         </ul>
         <form class="d-flex">
           <input id="searchTxt" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit"><i class="light-icon-search" id="searchIcon"></i></button>
+          <button class="btn btn-outline-success" type="submit"><i class="light-icon-search"
+              id="searchIcon"></i></button>
         </form>
       </div>
     </div>
   </nav>
-  <div class="container my-3">
+
+  <div class="container my-3" id="main-container">
 
     <h1 id="heading"></h1>
     <div class="h-100 p-5 text-white  notes my-3">
@@ -47,7 +49,8 @@
       <div class="input-group">
         <textarea class="form-control" id="addTxt" aria-label="With textarea" placeholder="Enter your Notes"></textarea>
       </div>
-      <button class="btn btn-outline-light my-3" id="addBtn" type="button">Add <i class="light-icon-circle-plus" id="plus"></i></button>
+      <button class="btn btn-outline-light my-3" id="addBtn" type="button">Add <i class="light-icon-circle-plus"
+          id="plus"></i></button>
       <button class="btn btn-outline-danger my-3 mx-3" id="clearBtn" data-bs-toggle="modal" data-bs-target="#clearModal"
         type="button">Clear all Notes<i class="light-icon-trash" id="trash"></i></button>
     </div>
@@ -86,7 +89,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   <script src="app.js"></script>
 
 </body>
