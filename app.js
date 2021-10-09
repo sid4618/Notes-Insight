@@ -16,16 +16,17 @@ function write() {
   }
 }
 // if user click at clear all notes then clear the local
-let clearBtn = document.getElementById("clearNotes");
-clearBtn.addEventListener("click", function () {
+function clear() {
   localStorage.clear();
   showNotes();
-});
+}
+let clearBtn = document.getElementById("clearNotes");
+clearBtn.addEventListener("click",clear);
+
+
 
 // if user add a note and title,add it to local storage
-let addBtn = document.getElementById("addBtn");
-6;
-addBtn.addEventListener("click", function (e) {
+function add(e) {
   let addTxt = document.getElementById("addTxt");
 
   // for title
@@ -59,7 +60,10 @@ addBtn.addEventListener("click", function (e) {
   // showing of notes
   // showTitles();
   showNotes();
-});
+}
+let addBtn = document.getElementById("addBtn");
+6;
+addBtn.addEventListener("click",add);
 
 // // function to show titles from localStorage
 // function showTitles() {
@@ -123,8 +127,11 @@ function deleteNote(ind) {
 }
 
 // searching operation
+
+
+
 let search = document.getElementById("searchTxt");
-search.addEventListener("input", function () {
+search.addEventListener("input", function (){
   let inputVal = search.value.toLowerCase();
   // console.log('Input event fired!', inputVal);
   let noteCards = document.getElementsByClassName("noteCard");
@@ -144,3 +151,45 @@ search.addEventListener("input", function () {
     // console.log(cardTxt);
   });
 });
+
+
+// speech to text
+
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'hello': function() {
+      console.log("Hello");
+    },
+    'add title *tag':function(variable) {
+      console.log(variable);
+      let title=document.getElementById("title");
+      title.value=variable;
+    
+    },
+    'add note *tag':function(variable){
+      console.log(variable);
+      let note=document.getElementById("addTxt");
+      note.value=variable;
+    },
+    'add':function(){
+      console.log("add ho gaya");
+      add();
+    },
+    'clear': function() {
+       clear();
+    },
+    'delete *tag': function(variable) {
+      console.log("delete ho gaya");
+      deleteNote(variable);
+    }
+    
+    
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
