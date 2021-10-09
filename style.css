@@ -14,13 +14,26 @@
 }
 
 #trash,
-#plus {
+#plus,
+#notesIcon,
+#searchIcon {
   padding-left: 5px;
   font-size: 18px;
   position: relative;
   align-items: center;
   justify-content: center;
 }
+
+#searchIcon {
+  padding-left: 0px;
+}
+
+#notesIcon {
+  font-size: 50px;
+  position: absolute;
+  justify-content: baseline;
+}
+
 body {
   background-image: url("https://unsplash.com/photos/HbcfaO4m03s/download?force=true&w=1920");
   background-repeat: no-repeat;
